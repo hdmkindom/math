@@ -1,0 +1,69 @@
+\documentclass[a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\title{2.1 习题}
+\author{刘泽博}
+\date{\today}
+
+\begin{document}
+    \maketitle
+    第三题,设$G_1,G_2$是开集,且$G_1$是$G_2$的真子集,是否一定有$mG_1<mG_2$?
+
+        \[\because G_1 \subsetneq G_2\]
+        \[\therefore \exists x_0 \in G_2 \text{并且}  x_0 \notin G_1\]
+        \[\because G_1,G_2 \text{为开集}\]
+        \[\therefore \exists \delta > 0,(x_0 - \delta,x_0 + \delta) \subset G_2,(x_0 - \delta,x_0 + \delta)\not\subset G_1\]
+        \[\therefore G_1\cup(x_0 - \delta,x_0 + \delta) \subset G_2\]
+        \[\therefore mG_1 + m(x_0 - \delta,x_0 + \delta) \leq mG_2\]
+        \[\therefore mG_1 \leq mG_2 - 2\delta\]
+        \[\therefore mG_1<mG_2 \text{成立}\]
+    \hfill $\square$
+
+    第四题,对任意开集$G$,是否有$mG_1<mG_2$?
+
+        1. 证明: $G \subset G'$
+        \[\because G \text{为开集}\]
+        \[\therefore \forall x \in G\]
+        \[\exists \delta > 0,\text{使得}(x-\delta,x+\delta)\subset G\]
+        \[\therefore x \text{为聚点,而非;孤立点}\]
+        \[\therefore x \in G'\]
+        \[\therefore G \subset G'\]
+
+        2. 证明: $G' \subset G$
+        \[\because G'\text{为} G \text{的导集}\]
+        \[\therefore \forall x \in G'\]
+        \[x \text{必为聚点}\]
+        \[\therefore x \in G\]
+        \[\therefore G' \subset G\]
+
+        由上可知,如果G为开集,则$G = G'$
+        \[\therefore G \text{ 无孤立点，故 } \overline{G} = G \cup G' = G\]
+
+        \[\therefore m\overline{G}=mG\]
+    \hfill $\square$
+
+    第二十题,试作一个闭集 $F\subset[0,1]$,使得$F$中不含任何开区间,而$mF=1/2$
+
+        思路类似构造一个Cantor集,不过取得区间不一样
+
+        首先,已知$\sum_{n=1}^{\infty} \frac{1}{2^{n+1}} = \frac{1}{2}$
+        而且,令$G=(0,1)-F$
+
+        $mF=m((0,1)-G)=1-mG$
+        
+        所以,在尝试构造Cantor集F的时候,扣去的开区间应该符合级数$\sum_{n=1}^{\infty} \frac{1}{2^{n+1}}$
+
+        \[\text{令}F_0=[0,1],\text{记剩余的区间数量和为n}\]
+        \[\text{对}F_0\text{四等分,去除中间的}\frac{1}{4}\]
+        \[\text{得到}F_1,mG=\frac{1}{4}\]
+        \[\text{对}F_1\text{剩余的两个区间,各自去除中间的}(\frac{1}{4})^2\]
+        \[\text{得到}F_2,mG=\frac{1}{4} + (\frac{1}{4})^2\times2\]
+
+        \text{以此类推}\ldots
+
+        得到F,并且扣去的G有$mG=\sum_{n=1}^{\infty} \frac{1}{2^{n+1}} = \frac{1}{2}$
+        \[\text{因此},mF=\frac{1}{2},\text{且不含任何开区间}\]
+    \hfill $\square$
+\end{document}
