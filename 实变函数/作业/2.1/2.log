@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.3.27)  27 MAR 2025 22:57
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.3.27)  31 MAR 2025 00:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/hdm/math/实变函数/作业/2.1/2_1
-(/home/hdm/math/实变函数/作业/2.1/2_1.tex
+**/home/hdm/math/实变函数/作业/2.1/2
+(/home/hdm/math/实变函数/作业/2.1/2.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -258,8 +258,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2938.
 LaTeX Info: Redefining \] on input line 2939.
-) (./2_1.aux)
-\openout1 = `2_1.aux'.
+) (./2.aux)
+\openout1 = `2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
@@ -342,14 +342,16 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-] [2] (./2_1.aux) ) 
+]
+Missing character: There is no 令 (U+4EE4) in font [lmroman10-regular]:mapping=tex-text;!
+[2] [3] [4] (./2.aux) ) 
 Here is how much of TeX's memory you used:
- 7177 strings out of 477728
- 194896 string characters out of 5842238
- 519360 words of memory out of 5000000
- 27745 multiletter control sequences out of 15000+600000
+ 7188 strings out of 477728
+ 195741 string characters out of 5842238
+ 519354 words of memory out of 5000000
+ 27756 multiletter control sequences out of 15000+600000
  478553 words of font info for 81 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 89i,7n,97p,385b,270s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 89i,7n,97p,383b,270s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 2_1.pdf (2 pages).
+Output written on 2.pdf (4 pages).

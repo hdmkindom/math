@@ -3,7 +3,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 
-\title{2.1 习题}
+\title{第2章 习题}
 \author{刘泽博}
 \date{\today}
 
@@ -42,6 +42,63 @@
         \[\therefore G \text{ 无孤立点，故 } \overline{G} = G \cup G' = G\]
 
         \[\therefore m\overline{G}=mG\]
+    \hfill $\square$
+
+    第五题，如果把外测度定义改为:"有界集E的外测度定义为包含E的闭集的测度的下确界",是否合理?
+
+        不合理.
+
+        举一反例:定义区间 $[0,1]$ 内的有理数集：
+        \[Q_1=\mathbb{Q}\cap[0,1]\]
+        \[\text{有}m^{*}Q_1=\underset{Q_1\subset F}{inf}mF=m[0,1]=1\]
+        \[mQ=0\]
+        \[Q_1\subset Q\]
+        \[mQ_1=0\]
+        \[m^{*}\ne mQ\]
+        \[\therefore \text{该定义不成立}\]
+    \hfill $\square$
+
+    第七题,如果把外测度定义改为"$m^{*}E$为包含E的可测集的测度的下确界",问此定义与原来的外测度定义有何关系?
+
+        两种定义等价
+
+        证明如下:
+
+        记命题 a = 原定义,即$m^{*}E=\underset{G\subset E}{inf}mG$，G为开集
+
+        记命题 b = 新定义,即$m^{*}E=\underset{F\subset E}{inf}mF$，F为可测集
+
+        1. 证明 a -> b
+
+        \[\because G \text{为开集}\]
+        \[\therefore G \text{为可测集}\]
+        \[\therefore b\text{成立}\]
+
+        2. 证明 b -> a
+        \[令\underset{F\subset E}{inf}mF = t\]
+        \[\forall \varepsilon >0,\exists \text{可测集}F_1 \supset E=\underset{F\subset E}{inf}mF\]
+        \[\text{使得}mF_1<t+\frac{\varepsilon}{2}\]
+        \[\because F_1 \text{可测},\exists \text{开集}G_1,\text{使得}G_1\supset F_1\supset E\]
+        \[\therefore \text{可以有}mG_1 \le mF_1 + \frac{\varepsilon}{2} \le t + \varepsilon\]
+        \[\therefore \text{开集}G_1 \le \underset{F\subset E}{inf}mF + \varepsilon\]
+        \[\therefore a\text{成立}\]
+    \hfill $\square$
+    
+    第八题,设${E_k}$为$\mathbb{R}$中互不相交的集列$E=\bigcup_{k=1}^{\infty}E_K$,证明:
+    \[m_{*}E\geq \sum_{k=1}^{\infty}E_k\]
+
+        由内测度定义可知:   
+        \[m_{*}E=\sup_{F\subset E}mF\]
+        \[m_{*}E_k=\sup_{F_k\subset E_k}mF_K\]
+        \[\therefore \exists F,F_k \text{使得}m_{*}E=mF,m_{*}E_k=mF_k\]
+        下面证明$\cup_{k=1}^{\infty}F_k\subset F$
+        \[\because F_k \subset E_k\]
+        \[E_k=\cup E_k\]
+        \[\therefore \cup_{k=1}^{\infty}F_k\subset E\]
+        \[\therefore \cup_{k=1}^{\infty}F_k\subset F\]
+        \[m\cup_{k=1}^{\infty}F_k = \sum_{k=1}^{\infty}mF_k\]
+        \[\sum_{k=1}^{\infty}mF_k \le mF\]
+        \[\therefore m_{*}E\geq \sum_{k=1}^{\infty}E_k\]
     \hfill $\square$
 
     第二十题,试作一个闭集 $F\subset[0,1]$,使得$F$中不含任何开区间,而$mF=1/2$
