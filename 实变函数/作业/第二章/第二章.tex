@@ -1,0 +1,245 @@
+\documentclass[a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[margin=2.5cm]{geometry}  % 缩小边距
+
+\title{实变函数课本习题集}
+\author{刘泽博}
+\date{\today}
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+    \section{第二章练习题}
+    \subsection{第三题}
+    设$G_1,G_2$是开集,且$G_1$是$G_2$的真子集,是否一定有$mG_1<mG_2$?
+
+        \[\because G_1 \subsetneq G_2\]
+        \[\therefore \exists x_0 \in G_2 \text{并且}  x_0 \notin G_1\]
+        \[\because G_1,G_2 \text{为开集}\]
+        \[\therefore \exists \delta > 0,(x_0 - \delta,x_0 + \delta) \subset G_2,(x_0 - \delta,x_0 + \delta)\not\subset G_1\]
+        \[\therefore G_1\cup(x_0 - \delta,x_0 + \delta) \subset G_2\]
+        \[\therefore mG_1 + m(x_0 - \delta,x_0 + \delta) \leq mG_2\]
+        \[\therefore mG_1 \leq mG_2 - 2\delta\]
+        \[\therefore mG_1<mG_2 \text{成立}\]
+    \hfill $\square$
+
+    \subsection{第四题}
+    对任意开集$G$,是否有$mG_1<mG_2$?
+
+        1. 证明: $G \subset G'$
+        \[\because G \text{为开集}\]
+        \[\therefore \forall x \in G\]
+        \[\exists \delta > 0,\text{使得}(x-\delta,x+\delta)\subset G\]
+        \[\therefore x \text{为聚点,而非;孤立点}\]
+        \[\therefore x \in G'\]
+        \[\therefore G \subset G'\]
+
+        2. 证明: $G' \subset G$
+        \[\because G'\text{为} G \text{的导集}\]
+        \[\therefore \forall x \in G'\]
+        \[x \text{必为聚点}\]
+        \[\therefore x \in G\]
+        \[\therefore G' \subset G\]
+
+        由上可知,如果G为开集,则$G = G'$
+        \[\therefore G \text{ 无孤立点，故 } \overline{G} = G \cup G' = G\]
+
+        \[\therefore m\overline{G}=mG\]
+    \hfill $\square$
+
+    \subsection{第五题}
+    如果把外测度定义改为:"有界集E的外测度定义为包含E的闭集的测度的下确界",是否合理?
+
+        不合理.
+
+        举一反例:定义区间 $[0,1]$ 内的有理数集：
+        \[Q_1=\mathbb{Q}\cap[0,1]\]
+        \[\text{有}m^{*}Q_1=\underset{Q_1\subset F}{inf}mF=m[0,1]=1\]
+        \[mQ=0\]
+        \[Q_1\subset Q\]
+        \[mQ_1=0\]
+        \[m^{*}\ne mQ\]
+        \[\therefore \text{该定义不成立}\]
+    \hfill $\square$
+
+    \subsection{第六题}
+    设$A_1,A_2,\ldots,A_n$是n个互不相交的可测集，且$E_k \subset A_k,k=1,2,\ldots ,n$证明:
+    \[m^*(\bigcup_{k=1}^{n}E_k)=\sum_{k=1}^{n}m^*E_k\]
+
+    prove:
+    由 外测度的半可加行性可知:
+    \[m^*(\bigcup_{k=1}^{n}E_k) \le \sum_{k=1}^{n}m^*E_k\]
+    
+    现,证明:
+    \[m^*(\bigcup_{k=1}^{n}E_k) \ge \sum_{k=1}^{n}m^*E_k\]
+
+    \[\because A_1,A_2,\ldots,A_n \text{是n个互不相交的可测集，且}E_k \subset A_k,k=1,2,\ldots ,n\]
+    \[\therefore E_1,E_2,\ldots ,E_n \text{互不相交}\]
+
+    令E=$\bigcup_{k=1}^{n}E_k$,有
+    \[m^*(\bigcup_{k=1}^{n}E_k)=inf\{mG|G\text{为开集},E\subset G\}\]
+    \[\therefore (G\cap A_k) \supset E_k \supset (G\cap E_k)\]
+    \[\therefore mG \ge m\bigcup_{k=1}^{n}(G\cap A_k)=\sum_{k=1}^{n}m(G \cap A_k) = \sum_{k=1}^{n}m^*(G \cap A_k) \ge \sum_{k=1}^{n}m^*E_k\]
+    \[\therefore m^*(\bigcup_{k=1}^{n}E_k) \ge \sum_{k=1}^{n}m^*E_k\]
+    \hfill $\square$
+
+    \subsection{第七题}
+    如果把外测度定义改为"$m^{*}E$为包含E的可测集的测度的下确界",问此定义与原来的外测度定义有何关系?
+
+        两种定义等价
+
+        证明如下:
+
+        记命题 a = 原定义,即$m^{*}E=\underset{G\subset E}{inf}mG$，G为开集
+
+        记命题 b = 新定义,即$m^{*}E=\underset{F\subset E}{inf}mF$，F为可测集
+
+        1. 证明 a -> b
+
+        \[\because G \text{为开集}\]
+        \[\therefore G \text{为可测集}\]
+        \[\therefore b\text{成立}\]
+
+        2. 证明 b -> a
+        \[令\underset{F\subset E}{inf}mF = t\]
+        \[\forall \varepsilon >0,\exists \text{可测集}F_1 \supset E=\underset{F\subset E}{inf}mF\]
+        \[\text{使得}mF_1<t+\frac{\varepsilon}{2}\]
+        \[\because F_1 \text{可测},\exists \text{开集}G_1,\text{使得}G_1\supset F_1\supset E\]
+        \[\therefore \text{可以有}mG_1 \le mF_1 + \frac{\varepsilon}{2} \le t + \varepsilon\]
+        \[\therefore \text{开集}G_1 \le \underset{F\subset E}{inf}mF + \varepsilon\]
+        \[\therefore a\text{成立}\]
+    \hfill $\square$
+
+    \subsection{第八题}
+    设${E_k}$为$\mathbb{R}$中互不相交的集列$E=\bigcup_{k=1}^{\infty}E_K$,证明:
+    \[m_{*}E\geq \sum_{k=1}^{\infty}E_k\]
+
+        由内测度定义可知:   
+        \[m_{*}E=\sup_{F\subset E}mF\]
+        \[m_{*}E_k=\sup_{F_k\subset E_k}mF_K\]
+        \[\therefore \exists F,F_k \text{使得}m_{*}E=mF,m_{*}E_k=mF_k\]
+        下面证明$\cup_{k=1}^{\infty}F_k\subset F$
+        \[\because F_k \subset E_k\]
+        \[E_k=\cup E_k\]
+        \[\therefore \cup_{k=1}^{\infty}F_k\subset E\]
+        \[\therefore \cup_{k=1}^{\infty}F_k\subset F\]
+        \[m\cup_{k=1}^{\infty}F_k = \sum_{k=1}^{\infty}mF_k\]
+        \[\sum_{k=1}^{\infty}mF_k \le mF\]
+        \[\therefore m_{*}E\geq \sum_{k=1}^{\infty}E_k\]
+    \hfill $\square$
+
+    \subsection{第九题}
+    设$E_1,E_2$均为有界可测集,证明:
+    \[m(E_1\cup E_2)=mE_1+mE_2-m(E_1 \cap E_2)\]
+
+    prove:
+    \[\because E_1,E_2 \text{有界且可测}\]
+    \[\therefore (E_1 \cup E_2) = E_1 \cap (E_2 - (E_1 \cap E_2))\]
+    \begin{align*}
+        &\therefore m(E_1 \cup E_2)\\
+        & = m(E_1 \cap (E_2 - (E_1 \cap E_2)))\\
+        & = m(E_1) + m(E_2 - (E_1 \cap E_2))\\
+        & = m(E_1) + m(E_2) - m(E_1 \cap E_2)
+    \end{align*}
+    \hfill $\square$
+
+    \subsection{第十题}
+    设E为$\mathbb{R}$中的可测集,A为任意集,证明
+    \[m^{*}(E\cup A)+ m^*(E\cap A)=mE+m^{*}A\]
+
+    当E不可测时,上式如何.
+
+    prove: 
+    \[A\cup E \cap E = E\]
+    \[A\cup E \cap E^c = A\cap E^c\]
+    \[m^*E = mE\]
+
+    由 Caratheodory 条件:A为任意集,E为$\mathbb{R}$中的可测集
+
+    \[m^*A=^*(A\cap E) + m^*(A\cap E^c)\]
+    \[m^*(A\cup E)=m^*(A\cup E \cap E) + m^*(A\cup E \cap E^c)\]
+    \[m^*(A\cup E)=m^*E+m^*(A\cap E^c)\]
+    \[\therefore m^{*}(E\cup A)+ m^*(E\cap A)=m^*E+m^{*}A\]
+    \[\therefore m^{*}(E\cup A)+ m^*(E\cap A)=mE+m^{*}A\]
+    \hfill $\square$
+
+    \subsection{第十一题}
+    设{$E_n$}为[0,1]中的集列,满足:
+    \[\sum_{n=1}^{\infty}m^*E_n=\infty\]
+    问是否有$m*(\overline{\lim_{n}}E_n)>0$?
+
+    \subsection{第十二题}
+    设$E$为可测集,问下列是否成立?
+
+    (i)$m\overline{E}=mE$
+    
+    (ii)$mE^{\circ}=mE$
+
+    (i)不成立,反例:$E=[0,1]\cap \mathbb{Q}$
+    \[\therefore \overline{E}=[0,1]\]
+    \[\therefore mE = 0\]
+    \[\therefore m\overline{E}=1\]
+    \[m\overline{E}\ne mE\]
+
+    (ii)不成立,反例:$E=[0,1] - \mathbb{Q}$
+    \[\therefore E^{\circ} = \emptyset\]
+    \[\therefore mE^{\circ} = 0\]
+    \[\therefore mE = 1\]
+    \[mE^{\circ} \ne mE\]
+
+    \subsection{第十四题}
+    设$E_1\subset E_2 \subset \cdots E_n \subset \cdots$,试着证明
+    \[m^{*}(\bigcup_{n=1}^{\infty}E_n)= \lim_{x\to \infty} m^{*}E_n\]
+
+    prove:
+
+    数学归纳法:得到$m^{*}(\bigcup_{n=1}^{n}E_n)=m^{*}E_n$:
+
+    1. 当n=1时,显然成立.
+
+    2. 当n=2时,有
+    \[\because {E_k}\text{递增}\]
+    \[\therefore m^{*}(E_1 \cup E_2)=m^*E_2\]
+
+    3. 假设当n=k时成立,即
+    \[m^{*}(\bigcup_{n=1}^{k}E_n)=m^{*}E_n\]
+
+    4. 当n=k+1时,有
+    \[m^{*}(\bigcup_{n=1}^{k}E_n \cup E_{k+1})=m^{*}(E_n\cup E_{k+1})=m^{*}E_{k+1}\]
+    
+    均成立
+
+    \[\therefore m^{*}(\bigcup_{n=1}^{n}E_n)=m^{*}E_n\]
+
+    两侧去极限,有
+    \[\therefore \lim_{n\to \infty} m^{*}(\bigcup_{n=1}^{n}E_n)=\lim_{n\to \infty} m^{*}E_n\]
+    \[m^{*}(\bigcup_{n=1}^{\infty}E_n)= \lim_{x\to \infty} m^{*}E_n\]
+    \hfill $\square$
+
+
+    \subsection{第二十题}
+    试作一个闭集 $F\subset[0,1]$,使得$F$中不含任何开区间,而$mF=1/2$
+
+        思路类似构造一个Cantor集,不过取得区间不一样
+
+        首先,已知$\sum_{n=1}^{\infty} \frac{1}{2^{n+1}} = \frac{1}{2}$
+        而且,令$G=(0,1)-F$
+
+        $mF=m((0,1)-G)=1-mG$
+        
+        所以,在尝试构造Cantor集F的时候,扣去的开区间应该符合级数$\sum_{n=1}^{\infty} \frac{1}{2^{n+1}}$
+
+        \[\text{令}F_0=[0,1],\text{记剩余的区间数量和为n}\]
+        \[\text{对}F_0\text{四等分,去除中间的}\frac{1}{4}\]
+        \[\text{得到}F_1,mG=\frac{1}{4}\]
+        \[\text{对}F_1\text{剩余的两个区间,各自去除中间的}(\frac{1}{4})^2\]
+        \[\text{得到}F_2,mG=\frac{1}{4} + (\frac{1}{4})^2\times2\]
+
+        \text{以此类推}\ldots
+
+        得到F,并且扣去的G有$mG=\sum_{n=1}^{\infty} \frac{1}{2^{n+1}} = \frac{1}{2}$
+        \[\text{因此},mF=\frac{1}{2},\text{且不含任何开区间}\]
+    \hfill $\square$
+\end{document}

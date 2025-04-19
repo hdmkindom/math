@@ -1,0 +1,153 @@
+\documentclass[a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[margin=2.5cm]{geometry}  % 缩小边距
+
+\title{实变函数课本习题集}
+\author{刘泽博}
+\date{\today}
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+    \section{第一章练习题}
+    \subsection{第七题}
+    作下列各集的一一对应:
+
+    (2) [a,b]与$(-\infty,\infty)$
+    
+    尝试作映射使得
+
+    \[[a,b] \sim (-\frac{\pi}{2},\frac{\pi}{2}) \sim (-\infty,\infty)\]
+    \[\text{分解映射为}f\circ g\]
+    \[f:[a,b] \sim (-\frac{\pi}{2},\frac{\pi}{2})\]
+    \[\text{作线性映射f(x),用待定系数法求解,得}\]
+    \[f(x)=\frac{\pi}{b-a}x+\frac{(a+b)\pi}{2(a-b)}\]
+    \[g:(-\frac{\pi}{2},\frac{\pi}{2}) \sim (-\infty,\infty)\]
+    \[g(x)=tanx\]
+    \[f\circ g [a,b] =(-\infty,\infty)\]
+    \hfill $\square$
+
+    (2) 开区间(0,1)与无理数集
+
+    记无理数集为$\mathbb{R}\backslash\mathbb{Q}$
+
+    尝试作映射使得
+    \[(0,1) \sim (0,\infty) \sim \mathbb{R}\backslash\mathbb{Q}\]
+    \[\text{分解映射为}f\circ g\]
+    \[f:(0,1) \sim (0,\infty)\]
+    \[f(x)=\frac{1}{x}-1\]
+    \[g:(0,\infty) \sim \mathbb{R}\backslash\mathbb{Q}\]
+    \[(0,\infty)\text{中,有理数可列,记为} \{q_1,q_2\ldots q_n \ldots\}\]
+    \[
+    g(x) =
+    \begin{cases}
+    x, & x \not\in \mathbb{Q} \\
+    q_n+\frac{\pi}{n}, & x = q_n
+    \end{cases}
+    \]
+    \[\text{保证g(x)在无理数点为无理数,有理数点也为无理数}\]
+    \[f\circ g (0,1)= \mathbb{R}\backslash\mathbb{Q}\]
+    \hfill $\square$
+
+    \subsection{第九题}
+    以有理数为端点的区间集能否与自然数集或区间[0,1]构成一一对应?
+
+    能
+
+    证明如下:
+    \[\mathbb{Q}\text{为可列集,记为} \{q_1,q_2\ldots q_n \ldots\}\]
+    \[\text{区间集A}=\{A_{1,2},A_{2,3}\ldots A_{n,n+1} \ldots\},\text{其中,}A_{n,n+1}\text{为以}q_1,q_2\text{为端点的区间}\]
+    \[\text{易知}A可列\]
+    \[\therefore A \sim \text{自然数集}\]
+    \hfill $\square$
+
+    \subsection{第十题}
+    第十题 证明整系数多项式的全体是可列的
+
+    记整系数多项式的全体为
+    \[P[x]=\{f(x)=a_0x^n+a_1x^{n-1}+\ldots+a_n|a_i \in \mathbb{Z},n\in \mathbb{N_+}\}\]
+    
+    记$P[x]$中一真子集为
+    \[P'[x]=\{f(x)=a_0x^n+a_1x^{n-1}+\ldots+a_n|a_i \in \mathbb{N_+},n\in \mathbb{N_+}\}\]
+    \[\text{现证明}P'[x]\text{可列}\]
+    \[P'[x] = \bigcup_{n=1}^{\infty} P'_n[x]\]
+    \[\because  P'_n[x]\sim \mathbb{N}\]
+    \[\therefore P'_n[x]\text{可列}\]
+    \[\therefore P'[x]\text{可列}\]
+    \[\therefore P[x]\text{中真子集可列,进而}P[x]\text{可列}\]
+    \hfill $\square$
+
+    \subsection{第十六题}
+    证明任何点集的内点的全体是开集
+
+    记任意点集为$A$如果一个内点$t_i \in A$
+    \[\text{则有}\exists (a_i,b_i),\text{使得}t_i \in (a_i,b_i)\]
+    \[(a_i,b_i) \subset A\]
+    \[\therefore \forall x \in (a_i,b_i)\text{均有x为内点}\]
+    \[\therefore (a_i,b_i)\text{为开集}\]
+    \[\text{对于内点}t_j\not\in (a_i,b_i)\]
+    \[\text{则有}\exists (a_j,b_j)\text{使得}t_j \in (a_j,b_j) \subset A\]
+    \[\text{同理可证}t_j\text{所在的}(a_j,b_j)\text{为开集}\]
+    \[\text{由此可知,A内点全体为开集}\]
+    \hfill $\square$
+
+    \subsection{第十七题}
+    设f(x)是定义在$\mathbb{R}^1$上只取整数值的函数,证明它的连续点集是开集,且不连续点集是闭集
+
+    记$S$为f(x)的连续点集
+    
+    $T$为f(x)的不连续点集
+
+    1. 证明连续点集是开集
+    \[\forall x_0 \in S\]
+    \[\exists \delta >0\]
+    \[\text{使得}(x_0-\delta,x_0+\delta)\subset S\land f(x)\text{在}x_0\text{处连续}\]
+    \[\therefore \lim_{x\to x_0}F(x)=f(x_0)\]
+    \[\forall x \in (x_0-\delta,x_0+\delta)\]
+    \[\text{有}f(x)=f(x_0)\]
+    \[\therefore S\text{为开集}\]
+
+    2. 证明不连续点集是闭集
+    \[T=\mathbb{R}^1-S\]
+
+    即证明 如果$\{x_n\}\subset T$
+    \[\lim_{n \to \infty}x_n \to x_0\]
+    \[\text{有}x_0\in T\]
+    \[\text{设}\{x_n\}\subset T\]
+    \[\lim_{n \to \infty}x_n \to x_0\]
+
+    反证:
+    \[\text{若}x_0\not\in T\]
+    \[\text{则}x_0\in S\]
+    \[\text{则}\lim_{x\to x_0}f(x)=f(x_0)\]
+    \[\exists \delta > 0\]
+    \[\forall x \in (x_0-\delta,x_0+\delta)\]
+    \[\therefore f(x)=f(x_0)\text{为一定值}\]
+    \[\text{然而}\]
+    \[\because x_n \in T\]
+    \[f(x_n)不连续\]
+    \[\therefore \forall \delta >0\text{且充分小}\]
+    \[\text{必然}\exists  x \in (x_0-\delta,x_0+\delta)\]
+    \[\text{使得}f(x) \ne f(x_0)\]
+    \[\text{与} f(x)=f(x_0) \text{矛盾}\]
+    \[\therefore x_0 \in T , T \text{为闭集}\]\
+    \hfill $\square$
+
+    \subsection{第十八题}
+    设点集列$\{E_k\}$是有限区间[a,b]的渐缩列:$E_1 \supset E_2 \supset \ldots,$且每个$E_k$均为非空闭集,证明$\bigcap_{k=1}^{\infty}E_k$非空,试着证明交集$ \bigcap_{k=1}^{\infty} E_k$非空
+
+    \[\text{令}E_1=[a_1,b_1]\subset [a,b]\]
+    \[E_2 =[a_2,b_2]\subset E_1\]
+    \[E_k = [a_k,b_k]\subset E_{k-1}\]
+    \[\text{有}a_1<a_2<\ldots<a_k<\ldots\]
+    \[b_1>b_2>\ldots>b_k>\ldots\]
+    \[\text{构成区间列}\]
+    \[\therefore \exists t_0 \text{为聚点}\]
+    \[t_0 \in E_n,n=1,2,3,\ldots\]
+    \[\therefore t_0 \in \bigcap_{k=1}^{\infty}E_k\]
+    \[\therefore \bigcap_{k=1}^{\infty}E_k\text{非空}\]
+    \hfill $\square$
+
+\end{document}

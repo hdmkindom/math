@@ -1,0 +1,35 @@
+\documentclass[a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[margin=2.5cm]{geometry}  % 缩小边距
+
+\title{实变函数课本习题集}
+\author{刘泽博}
+\date{\today}
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+    \section{第三章练习题}    
+    \subsection{第一题}
+
+    f(x),g(x)为E上的可测函数,证明 E(f>g)为可测集?
+
+    prove:
+    \[\because f,g\text{为可测函数}\]
+    \[\therefore \forall \alpha >0\]
+    \[E(f>\alpha)\text{为可测函集,即}E(f>\alpha)=\{x\in E | f(x)>\alpha\}\]
+    \[E(g>\alpha)\text{为可测函集,即}E(g>\alpha)=\{x\in E | g(x)>\alpha\}\]
+    \[\text{对}E(g>\alpha)\text{来说,}E(g\ge\alpha)=E(g>\alpha)^C\]
+    \[\therefore E(g\ge\alpha)\text{为可测集}\]
+    \[\forall x \in E(f>g)\]
+    \[\exists \alpha\]
+    \[s.t. \quad x\in E(f>\alpha) \cap E(g \ge \alpha)\]
+    \[\therefore E(f>g)=\bigcup_{r\in \mathbb{Q}}(E(f>\alpha)\cap E(g\ge \alpha))\]
+    \[\because E(f>\alpha)\cap E(g\ge\alpha)\text{可测}\]
+    \[\therefore \bigcup_{r\in \mathbb{Q}}(E(f>\alpha)\cap E(g\ge \alpha))\text{可测}\]
+    \[\therefore E(f>g)\text{可测}\]
+    \hfill $\square$
+
+\end{document}

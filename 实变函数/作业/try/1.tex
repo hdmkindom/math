@@ -1,0 +1,93 @@
+\documentclass[a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[margin=2.2cm]{geometry}  % 缩小边距
+
+\title{实变函数课本习题集}
+\author{刘泽博}
+\date{\today}
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+
+    \section{第二章练习题}
+    \subsection{第六题}
+    设$A_1,A_2,\ldots,A_n$是n个互不相交的可测集，且$E_k \subset A_k,k=1,2,\ldots ,n$证明:
+    \[m^*(\bigcup_{k=1}^{n}E_k)=\sum_{k=1}^{n}m^*E_k\]
+
+    prove:
+    由 外测度的半可加行性可知:
+    \[m^*(\bigcup_{k=1}^{n}E_k) \le \sum_{k=1}^{n}m^*E_k\]
+    
+    现,证明:
+    \[m^*(\bigcup_{k=1}^{n}E_k) \ge \sum_{k=1}^{n}m^*E_k\]
+
+    \[\because A_1,A_2,\ldots,A_n \text{是n个互不相交的可测集，且}E_k \subset A_k,k=1,2,\ldots ,n\]
+    \[\therefore E_1,E_2,\ldots ,E_n \text{互不相交}\]
+
+    令E=$\bigcup_{k=1}^{n}E_k$,有
+    \[m^*(\bigcup_{k=1}^{n}E_k)=inf\{mG|G\text{为开集},E\subset G\}\]
+    \[\therefore (G\cap A_k) \supset E_k \supset (G\cap E_k)\]
+    \[\therefore mG \ge m\bigcup_{k=1}^{n}(G\cap A_k)=\sum_{k=1}^{n}m(G \cap A_k) = \sum_{k=1}^{n}m^*(G \cap A_k) \ge \sum_{k=1}^{n}m^*E_k\]
+    \[\therefore m^*(\bigcup_{k=1}^{n}E_k) \ge \sum_{k=1}^{n}m^*E_k\]
+    \hfill $\square$
+
+    \subsection{第十题}
+    设E为$\mathbb{R}$中的可测集,A为任意集,证明
+    \[m^{*}(E\cup A)+ m^*(E\cap A)=mE+m^{*}A\]
+
+    当E不可测时,上式如何.
+
+    prove: 
+    \[A\cup E \cap E = E\]
+    \[A\cup E \cap E^c = A\cap E^c\]
+    \[m^*E = mE\]
+
+    由 Caratheodory 条件:A为任意集,E为$\mathbb{R}$中的可测集
+
+    \[m^*A=^*(A\cap E) + m^*(A\cap E^c)\]
+    \[m^*(A\cup E)=m^*(A\cup E \cap E) + m^*(A\cup E \cap E^c)\]
+    \[m^*(A\cup E)=m^*E+m^*(A\cap E^c)\]
+    \[\therefore m^{*}(E\cup A)+ m^*(E\cap A)=m^*E+m^{*}A\]
+    \[\therefore m^{*}(E\cup A)+ m^*(E\cap A)=mE+m^{*}A\]
+    \hfill $\square$
+
+    \subsection{第十一题}
+    设{$E_n$}为[0,1]中的集列,满足:
+    \[\sum_{n=1}^{\infty}m^*E_n=\infty\]
+    问是否有$m*(\overline{\lim_{n}}E_n)>0$?
+
+
+    \subsection{第十四题}
+    设$E_1\subset E_2 \subset \cdots E_n \subset \cdots$,试着证明
+    \[m^{*}(\bigcup_{n=1}^{\infty}E_n)= \lim_{x\to \infty} m^{*}E_n\]
+
+    prove:
+
+    数学归纳法:得到$m^{*}(\bigcup_{n=1}^{n}E_n)=m^{*}E_n$:
+
+    1. 当n=1时,显然成立.
+
+    2. 当n=2时,有
+    \[\because {E_k}\text{递增}\]
+    \[\therefore m^{*}(E_1 \cup E_2)=m^*E_2\]
+
+    3. 假设当n=k时成立,即
+    \[m^{*}(\bigcup_{n=1}^{k}E_n)=m^{*}E_n\]
+
+    4. 当n=k+1时,有
+    \[m^{*}(\bigcup_{n=1}^{k}E_n \cup E_{k+1})=m^{*}(E_n\cup E_{k+1})=m^{*}E_{k+1}\]
+    
+    均成立
+
+    \[\therefore m^{*}(\bigcup_{n=1}^{n}E_n)=m^{*}E_n\]
+
+    两侧去极限,有
+    \[\therefore \lim_{n\to \infty} m^{*}(\bigcup_{n=1}^{n}E_n)=\lim_{n\to \infty} m^{*}E_n\]
+    \[m^{*}(\bigcup_{n=1}^{\infty}E_n)= \lim_{x\to \infty} m^{*}E_n\]
+    \hfill $\square$
+
+\end{document}
