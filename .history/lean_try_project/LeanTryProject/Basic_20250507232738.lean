@@ -41,5 +41,3 @@ def distance_two_Repo ( p1 : Point_Repr) ( p2 : Point_Repr) : Float :=
 #eval distance_two_Repo liguangshuo_Repr liguangshuo_Repr
 
 #check Point.mk 1.5 2.8
-
-#eval add1 11111111111111111111111111111111111111111111111111
